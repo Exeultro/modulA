@@ -626,7 +626,6 @@ body {
         max-width: 320px;
     }
     
-    /* Изменение 3: Преимущества в 1 колонку */
     .advantages-container {
         flex-direction: column;
         align-items: center;
@@ -637,14 +636,12 @@ body {
         max-width: 280px;
     }
     
-    /* Изменение 4: Партнеры в 1 колонку */
     .partners-container {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
     
-    /* Изменение 5: Подвал в 1 колонку */
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -658,7 +655,6 @@ body {
         justify-content: center;
     }
     
-    /* Дополнительные адаптации */
     .search-box {
         flex-direction: column;
     }
@@ -682,7 +678,6 @@ body {
 
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Изменение 1: Меню в бургере (убираем десктопное) */
     .header-right {
         display: none;
     }
@@ -691,7 +686,6 @@ body {
         display: block;
     }
     
-    /* Изменение 2: Карточки игр в 2 колонки */
     .games-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -703,7 +697,6 @@ body {
         max-width: none;
     }
     
-    /* Изменение 3: Преимущества в 2 колонки */
     .advantages-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -717,7 +710,6 @@ body {
         max-width: none;
     }
     
-    /* Изменение 4: Партнеры в 2 колонки */
     .partners-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -726,7 +718,6 @@ body {
         margin: 0 auto;
     }
     
-    /* Изменение 5: Подвал в 2 колонки */
     .footer-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -738,7 +729,6 @@ body {
         text-align: center;
     }
     
-    /* Дополнительные адаптации */
     .search-box {
         flex-direction: row;
     }
@@ -754,7 +744,6 @@ body {
 
 
 @media screen and (min-width: 1024px) {
-    /* Изменение 1: Показываем десктопное меню, скрываем бургер */
     .burger-menu {
         display: none;
     }
@@ -763,7 +752,6 @@ body {
         display: flex !important;
     }
     
-    /* Изменение 2: Карточки игр в 4-5 колонок */
     .games-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
