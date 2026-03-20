@@ -608,7 +608,6 @@ body {
 
 
 @media screen and (max-width: 767px) {
-    /* Изменение 1: Меню превращается в бургер */
     .header-right {
         display: none;
     }
@@ -617,7 +616,6 @@ body {
         display: block;
     }
     
-    /* Изменение 2: Карточки игр в 1 колонку */
     .games-container {
         flex-direction: column;
         align-items: center;
