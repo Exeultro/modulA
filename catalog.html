@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог игр</title>
+    <title>Каталог игр | Best Games</title>
     <link rel="stylesheet" href="style/stylescatalog.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Основной контент -->
@@ -13,68 +14,68 @@
         <div class="catalog-header">
             <h1 class="catalog-title">Каталог игр</h1>
             
-<!-- Кнопка фильтра для мобилок-->
-<div class="filter-toggle">
-    <input type="checkbox" id="filter-toggle" class="filter-toggle-checkbox">
-    <label for="filter-toggle" class="filter-toggle-label">
-        <i class="fas fa-sliders-h"></i>
-        <span>Фильтры</span>
-    </label>
-    
-        <!-- Мобильная панель фильтров-->
-        <div class="mobile-filter">
-            <div class="mobile-filter-content">
-                <label for="filter-toggle" class="mobile-filter-close">
-                    <i class="fas fa-times"></i>
+            <!-- Кнопка фильтра для мобилок-->
+            <div class="filter-toggle">
+                <input type="checkbox" id="filter-toggle" class="filter-toggle-checkbox">
+                <label for="filter-toggle" class="filter-toggle-label">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Фильтры</span>
                 </label>
-                <h2 class="filter-title">Фильтр по жанрам</h2>
                 
-                <div class="filter-genres">
-                    <label class="genre-checkbox">
-                        <input type="checkbox" name="genre-mobile" value="rpg" checked>
-                        <span>RPG</span>
-                    </label>
-                    
-                    <label class="genre-checkbox">
-                        <input type="checkbox" name="genre-mobile" value="action">
-                        <span>Action</span>
-                    </label>
-                    
-                    <label class="genre-checkbox">
-                        <input type="checkbox" name="genre-mobile" value="adventure">
-                        <span>Adventure</span>
-                    </label>
-                    
-                    <label class="genre-checkbox">
-                        <input type="checkbox" name="genre-mobile" value="shooter">
-                        <span>Шутер</span>
-                    </label>
-                    
-                    <label class="genre-checkbox">
-                        <input type="checkbox" name="genre-mobile" value="strategy">
-                        <span>Стратегия</span>
-                    </label>
-                    
-                    <label class="genre-checkbox">
-                        <input type="checkbox" name="genre-mobile" value="racing">
-                        <span>Гонки</span>
-                    </label>
-                    
-                    <label class="genre-checkbox">
-                        <input type="checkbox" name="genre-mobile" value="sport">
-                        <span>Спорт</span>
-                    </label>
-                    
-                    <label class="genre-checkbox">
-                        <input type="checkbox" name="genre-mobile" value="simulator">
-                        <span>Симулятор</span>
-                    </label>
+                <!-- Мобильная панель фильтров-->
+                <div class="mobile-filter">
+                    <div class="mobile-filter-content">
+                        <label for="filter-toggle" class="mobile-filter-close">
+                            <i class="fas fa-times"></i>
+                        </label>
+                        <h2 class="filter-title">Фильтр по жанрам</h2>
+                        
+                        <div class="filter-genres">
+                            <label class="genre-checkbox">
+                                <input type="checkbox" name="genre-mobile" value="rpg" checked>
+                                <span>RPG</span>
+                            </label>
+                            
+                            <label class="genre-checkbox">
+                                <input type="checkbox" name="genre-mobile" value="action">
+                                <span>Action</span>
+                            </label>
+                            
+                            <label class="genre-checkbox">
+                                <input type="checkbox" name="genre-mobile" value="adventure">
+                                <span>Adventure</span>
+                            </label>
+                            
+                            <label class="genre-checkbox">
+                                <input type="checkbox" name="genre-mobile" value="shooter">
+                                <span>Шутер</span>
+                            </label>
+                            
+                            <label class="genre-checkbox">
+                                <input type="checkbox" name="genre-mobile" value="strategy">
+                                <span>Стратегия</span>
+                            </label>
+                            
+                            <label class="genre-checkbox">
+                                <input type="checkbox" name="genre-mobile" value="racing">
+                                <span>Гонки</span>
+                            </label>
+                            
+                            <label class="genre-checkbox">
+                                <input type="checkbox" name="genre-mobile" value="sport">
+                                <span>Спорт</span>
+                            </label>
+                            
+                            <label class="genre-checkbox">
+                                <input type="checkbox" name="genre-mobile" value="simulator">
+                                <span>Симулятор</span>
+                            </label>
+                        </div>
+                        <button class="filter-apply">Применить фильтры</button>
+                    </div>
                 </div>
-                    <button class="filter-apply">Применить фильтры</button>
-            </div>
             </div>
         </div>
-    </div>
 
         <div class="catalog-container">
             <!-- Боковая панель фильтров -->
@@ -128,10 +129,9 @@
 
             <!-- Сетка с карточками игр -->
             <div class="games-grid">
-                <!-- Карточка 1 -->
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="foto/Cyberpunk.png" width="250px" height="200px">
+                        <img src="foto/Cyberpunk.png" alt="Cyberpunk 2077" width="250" height="200">
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">Cyberpunk 2077</h3>
@@ -143,16 +143,16 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="far fa-star"></i>
+                            <span class="rating-text">(4.0)</span>
                         </div>
                         <div class="game-price">1 999 ₽</div>
                         <a href="#" class="game-button">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Карточка 2 -->
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="foto/witcher.jpg" width="250px" height="200px">
+                        <img src="foto/witcher.jpg" alt="The Witcher 3" width="250" height="200">
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">The Witcher 3</h3>
@@ -164,16 +164,16 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <span class="rating-text">(5.0)</span>
                         </div>
                         <div class="game-price">1 499 ₽</div>
                         <a href="#" class="game-button">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Карточка 3 -->
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="foto/rdr.jpg" width="250px" height="200px">
+                        <img src="foto/rdr.jpg" alt="Red Dead Redemption 2" width="250" height="200">
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">Red Dead Redemption 2</h3>
@@ -185,16 +185,16 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <span class="rating-text">(5.0)</span>
                         </div>
                         <div class="game-price">2 499 ₽</div>
                         <a href="#" class="game-button">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Карточка 4 -->
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="foto/baldur.png" width="250px" height="200px">
+                        <img src="foto/baldur.png" alt="Baldur's Gate 3" width="250" height="200">
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">Baldur's Gate 3</h3>
@@ -206,16 +206,16 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <span class="rating-text">(5.0)</span>
                         </div>
                         <div class="game-price">2 799 ₽</div>
                         <a href="#" class="game-button">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Карточка 5 -->
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="foto/hogwarts.jpg" width="250px" height="200px">
+                        <img src="foto/hogwarts.jpg" alt="Hogwarts Legacy" width="250" height="200">
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">Hogwarts Legacy</h3>
@@ -227,37 +227,16 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="far fa-star"></i>
+                            <span class="rating-text">(4.0)</span>
                         </div>
                         <div class="game-price">3 299 ₽</div>
                         <a href="#" class="game-button">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Карточка 6 -->
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="foto/Cyberpunk.png" width="250px" height="200px">
-                    </div>
-                    <div class="game-info">
-                        <h3 class="game-title">Cyberpunk 2077</h3>
-                        <div class="game-genre">Жанр: RPG, Action</div>
-                        <div class="game-developer">CD Projekt Red</div>
-                        <div class="game-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="game-price">1 999 ₽</div>
-                        <a href="#" class="game-button">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Карточка 7 -->
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="foto/witcher.jpg" width="250px" height="200px">
+                        <img src="foto/witcher.jpg" alt="The Witcher 3" width="250" height="200">
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">The Witcher 3</h3>
@@ -269,16 +248,16 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <span class="rating-text">(5.0)</span>
                         </div>
                         <div class="game-price">1 499 ₽</div>
                         <a href="#" class="game-button">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Карточка 8 -->
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="foto/rdr.jpg" width="250px" height="200px">
+                        <img src="foto/rdr.jpg" alt="Red Dead Redemption 2" width="250" height="200">
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">Red Dead Redemption 2</h3>
@@ -290,6 +269,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
+                            <span class="rating-text">(5.0)</span>
                         </div>
                         <div class="game-price">2 499 ₽</div>
                         <a href="#" class="game-button">Подробнее</a>

@@ -1,495 +1,65 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-        }
-
-        .header {
-            overflow: hidden;
-            background-color: #2d2d2d;
-            padding: 20px 10px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #764ba2;
-        }
-
-        .header a {
-            float: left;
-            color: #e0e0e0;
-            text-align: center;
-            padding: 12px;
-            text-decoration: none;
-            font-size: 18px;
-            line-height: 25px;
-            border-radius: 4px;
-        }
-
-        .header a.logo {
-            font-size: 25px;
-            font-weight: bold;
-            padding: 0;
-        }
-
-        .header a:hover {
-            background-color: #404040;
-            color: white;
-        }
-
-        .header a.active {
-            background-color: #764ba2;
-            color: white;
-        }
-
-        .header-right {
-            padding: 30px;
-            float: right;
-        }
-
-        .search-section {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
-        }
-
-        .search-container {
-            width: 800px;
-            background: #2d2d2d;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            border: 1px solid #404040;
-        }
-
-        .search-container h3 {
-            margin-bottom: 15px;
-            color: #e0e0e0;
-            font-size: 18px;
-        }
-
-        .search-box {
-            display: flex;
-            gap: 10px;
-            position: relative;
-        }
-
-        .search-box input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 2px solid #404040;
-            border-radius: 5px;
-            font-size: 16px;
-            outline: none;
-            background-color: #333;
-            color: #e0e0e0;
-            transition: border-color 0.3s;
-        }
-
-        .search-box input:focus {
-            border-color: #764ba2;
-        }
-
-        .search-box input::placeholder {
-            color: #888;
-        }
-
-        .search-box button {
-            padding: 12px 25px;
-            background: #764ba2;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .search-box button:hover {
-            background: #5d3a82;
-        }
-
-        .suggestions {
-            position: absolute;
-            width: calc(100% - 100px);
-            max-height: 200px;
-            overflow-y: auto;
-            background: #333;
-            border: 1px solid #404040;
-            border-radius: 5px;
-            margin-top: 5px;
-            display: none;
-            z-index: 1000;
-        }
-
-        .suggestions.active {
-            display: block;
-        }
-
-        .suggestion-item {
-            padding: 10px 15px;
-            cursor: pointer;
-            color: #e0e0e0;
-        }
-
-        .suggestion-item:hover {
-            background: #404040;
-        }
-
-        .slid {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 100%);
-            padding: 30px 0;
-        }
-
-        .slider-container {
-            width: 800px;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .slider {
-            display: flex;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
-
-        .slide {
-            min-width: 100%;
-            transition: transform 0.5s ease;
-            background: #2a2a2a;
-            color: #e0e0e0;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 300px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            object-fit: cover;
-        }
-
-        .slide h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .slide .price {
-            font-size: 20px;
-            color: #4caf50;
-            margin-bottom: 15px;
-        }
-
-        .slide .btn {
-            display: inline-block;
-            padding: 10px 25px;
-            background: #764ba2;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .slide .btn:hover {
-            background: #5d3a82;
-        }
-
-        .indicators {
-            display: flex;
-            justify-content: center;
-            margin-top: 15px;
-            gap: 8px;
-        }
-
-        .indicator {
-            width: 40px;
-            height: 8px;
-            background: #404040;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .indicator.active {
-            background: #764ba2;
-        }
-
-        .nav-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-        }
-
-        .nav-buttons button {
-            pointer-events: auto;
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .nav-buttons button:hover {
-            background: rgba(118, 75, 162, 0.8);
-        }
-
-        .games-section {
-            padding: 50px 20px;
-            background: #1a1a1a;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #e0e0e0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .games-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .game-card {
-            background: #2d2d2d;
-            border-radius: 15px;
-            overflow: hidden;
-            width: 250px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            border: 1px solid #404040;
-        }
-
-        .game-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(118, 75, 162, 0.3);
-        }
-
-        .game-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .game-info {
-            padding: 20px;
-        }
-
-        .game-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #e0e0e0;
-        }
-
-        .game-genre {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 5px;
-        }
-
-        .game-developer {
-            font-size: 12px;
-            color: #888;
-            margin-bottom: 10px;
-        }
-
-        .rating {
-            display: flex;
-            gap: 2px;
-            margin-bottom: 10px;
-        }
-
-        .star {
-            color: #ffc107;
-            font-size: 16px;
-        }
-
-        .star-empty {
-            color: #404040;
-        }
-
-        .game-price {
-            font-size: 20px;
-            font-weight: bold;
-            color: #4caf50;
-            margin-bottom: 15px;
-        }
-
-        .game-button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background: #764ba2;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .game-button:hover {
-            background: #5d3a82;
-        }
-
-        .partners-section {
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-        }
-
-        .partners-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .partner-logo {
-            filter: brightness(0.8) grayscale(30%);
-            transition: all 0.3s;
-            max-width: 150px;
-        }
-
-        .partner-logo:hover {
-            filter: brightness(1) grayscale(0%);
-            transform: scale(1.1);
-        }
-
-        .partner-logo img {
-            width: 100%;
-            height: auto;
-        }
-
-        .advantages-section {
-            padding: 50px 0;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 100%);
-        }
-
-        .advantages-title {
-            text-align: center;
-            color: #e0e0e0;
-            font-size: 36px;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .advantages-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .advantage-item {
-            flex: 1;
-            min-width: 200px;
-            max-width: 250px;
-            text-align: center;
-            padding: 30px 20px;
-            background: #2d2d2d;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border: 1px solid #404040;
-        }
-
-        .advantage-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(118, 75, 162, 0.2);
-        }
-
-        .advantage-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #404040 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-        }
-
-        .advantage-item h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #e0e0e0;
-        }
-
-        .advantage-item p {
-            font-size: 14px;
-            color: #888;
-            line-height: 1.5;
-        }
-
-        .footer {
-            background: #0a0a0a;
-            color: #888;
-            padding: 50px 20px 20px;
-            border-top: 2px solid #764ba2;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .footer-section h3 {
-            color: #e0e0e0;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .footer-section p {
-            margin-bottom: 10px;
-        }
-
-        .footer-section a {
-            color: #888;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: #764ba2;
-        }
-
-        .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-/* Бургер-меню */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* ========== ШАПКА ========== */
+.header {
+    background-color: #2d2d2d;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #764ba2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header a {
+    color: #e0e0e0;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.header a.logo img {
+    vertical-align: middle;
+}
+
+.header a:hover {
+    background-color: #404040;
+    color: white;
+}
+
+.header a.active {
+    background-color: #764ba2;
+    color: white;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* ========== БУРГЕР-МЕНЮ ========== */
 .burger-menu {
     display: none;
     position: relative;
@@ -505,7 +75,7 @@
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
-    padding: 15px;
+    padding: 10px;
     z-index: 1001;
     position: relative;
 }
@@ -519,7 +89,6 @@
     transition: all 0.3s ease;
 }
 
-/* Анимация бургера при открытии */
 .burger-toggle:checked + .burger-icon span:nth-child(1) {
     transform: rotate(45deg) translate(8px, 8px);
     background: #764ba2;
@@ -535,16 +104,15 @@
     background: #764ba2;
 }
 
-/* Выпадающее меню */
 .dropdown-nav {
     position: fixed;
     top: 85px;
     right: 0;
-    width: 250px;
+    width: 280px;
     background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
     border: 2px solid #764ba2;
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     opacity: 0;
     visibility: hidden;
@@ -560,19 +128,6 @@
     transform: translateY(0);
 }
 
-/* Треугольник сверху */
-.dropdown-nav::before {
-    content: '';
-    position: fixed;
-    top: -10px;
-    right: 20px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #764ba2;
-}
-
 .dropdown-nav a {
     display: block;
     color: #e0e0e0;
@@ -582,30 +137,478 @@
     border-radius: 10px;
     margin-bottom: 5px;
     transition: all 0.3s;
-    border: 1px solid transparent;
-}
-
-.dropdown-nav a:last-child {
-    margin-bottom: 0;
 }
 
 .dropdown-nav a:hover {
     background: rgba(118, 75, 162, 0.2);
-    border-color: #764ba2;
     transform: translateX(5px);
 }
 
 .dropdown-nav a.active {
     background: #764ba2;
     color: white;
+}
+
+/* ========== ПОИСК ========== */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin: 30px 20px;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 800px;
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    border: 1px solid #404040;
+}
+
+.search-container h3 {
+    margin-bottom: 15px;
+    color: #e0e0e0;
+    font-size: 18px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #404040;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    background-color: #333;
+    color: #e0e0e0;
+    transition: border-color 0.3s;
+    min-width: 200px;
+}
+
+.search-box input:focus {
     border-color: #764ba2;
 }
 
-@media screen and (max-width: 650px) {
-    .header a:not(.logo) {
-        display: none;
-    }
-    
+.search-box button {
+    padding: 12px 25px;
+    background: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.search-box button:hover {
+    background: #5d3a82;
+    transform: translateY(-2px);
+}
+
+.suggestions {
+    position: absolute;
+    width: calc(100% - 100px);
+    max-height: 200px;
+    overflow-y: auto;
+    background: #333;
+    border: 1px solid #404040;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+.suggestions.active {
+    display: block;
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #e0e0e0;
+}
+
+.suggestion-item:hover {
+    background: #404040;
+}
+
+/* ========== СЛАЙДЕР ========== */
+.slid {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 100%);
+    padding: 30px 20px;
+}
+
+.slider-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    background: #2a2a2a;
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.slide h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.slide .price {
+    font-size: 20px;
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.slide .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #764ba2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.slide .btn:hover {
+    background: #5d3a82;
+    transform: translateY(-2px);
+}
+
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 0 10px;
+}
+
+.nav-buttons button {
+    pointer-events: auto;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-buttons button:hover {
+    background: rgba(118, 75, 162, 0.8);
+    transform: scale(1.1);
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.indicator {
+    width: 40px;
+    height: 8px;
+    background: #404040;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.indicator.active {
+    background: #764ba2;
+    width: 60px;
+}
+
+/* ========== ИГРЫ ========== */
+.games-section {
+    padding: 50px 20px;
+    background: #1a1a1a;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.game-card {
+    background: #2d2d2d;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 280px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid #404040;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(118, 75, 162, 0.3);
+    border-color: #764ba2;
+}
+
+.game-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 20px;
+}
+
+.game-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.game-genre {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.game-developer {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.rating {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.star {
+    color: #ffc107;
+    font-size: 16px;
+}
+
+.star-empty {
+    color: #404040;
+}
+
+.game-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.game-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #764ba2;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.game-button:hover {
+    background: #5d3a82;
+    transform: translateY(-2px);
+}
+
+/* ========== ПАРТНЕРЫ ========== */
+.partners-section {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+}
+
+.partners-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-logo {
+    filter: brightness(0.8) grayscale(30%);
+    transition: all 0.3s;
+    max-width: 150px;
+}
+
+.partner-logo:hover {
+    filter: brightness(1) grayscale(0%);
+    transform: scale(1.1);
+}
+
+.partner-logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* ========== ПРЕИМУЩЕСТВА ========== */
+.advantages-section {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 100%);
+}
+
+.advantages-title {
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.advantages-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.advantage-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    text-align: center;
+    padding: 30px 20px;
+    background: #2d2d2d;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 1px solid #404040;
+    transition: all 0.3s;
+}
+
+.advantage-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(118, 75, 162, 0.2);
+}
+
+.advantage-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #404040 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.advantage-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.advantage-item p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.5;
+}
+
+/* ========== ПОДВАЛ ========== */
+.footer {
+    background: #0a0a0a;
+    color: #888;
+    padding: 50px 20px 20px;
+    border-top: 2px solid #764ba2;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #888;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #764ba2;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+@media screen and (max-width: 767px) {
+    /* Изменение 1: Меню превращается в бургер */
     .header-right {
         display: none;
     }
@@ -613,81 +616,274 @@
     .burger-menu {
         display: block;
     }
+    
+    /* Изменение 2: Карточки игр в 1 колонку */
+    .games-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .game-card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    /* Изменение 3: Преимущества в 1 колонку */
+    .advantages-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .advantage-item {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    /* Изменение 4: Партнеры в 1 колонку */
+    .partners-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    /* Изменение 5: Подвал в 1 колонку */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .contact-info {
+        justify-content: center;
+    }
+    
+    /* Дополнительные адаптации */
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .search-box button {
+        width: 100%;
+    }
+    
+    .slider-container {
+        width: 100%;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .advantages-title {
+        font-size: 28px;
+    }
 }
 
-        /* Медиа-запросы для адаптации */
-        @media screen and (max-width: 968px) {
-            .burger-menu {
-                display: block;
-                float: right;
-            }
-            
-            .header-right {
-                display: none !important;
-            }
-            
-            .header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 15px;
-            }
-            
-            .logo {
-                float: none;
-                padding: 0;
-            }
-            
-            .logo img {
-                width: 100px;
-                height: auto;
-            }
-            
-            .burger-icon {
-                margin-right: 5px;
-            }
-        }
 
-        @media screen and (min-width: 969px) {
-            .burger-menu {
-                display: none;
-            }
-            .header-right {
-                display: block !important;
-            }
-        }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Изменение 1: Меню в бургере (убираем десктопное) */
+    .header-right {
+        display: none;
+    }
+    
+    .burger-menu {
+        display: block;
+    }
+    
+    /* Изменение 2: Карточки игр в 2 колонки */
+    .games-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .game-card {
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* Изменение 3: Преимущества в 2 колонки */
+    .advantages-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .advantage-item {
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* Изменение 4: Партнеры в 2 колонки */
+    .partners-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* Изменение 5: Подвал в 2 колонки */
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .footer-section:last-child {
+        grid-column: span 2;
+        text-align: center;
+    }
+    
+    /* Дополнительные адаптации */
+    .search-box {
+        flex-direction: row;
+    }
+    
+    .slider-container {
+        width: 90%;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+}
 
-        @media screen and (max-width: 800px){
-            .slider-container{
-                width: 70%;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            .mobile-nav {
-                width: 100%;
-                max-width: none;
-            }
-            
-            .mobile-nav a {
-                font-size: 16px;
-                padding: 12px 15px;
-                text-align: center;
-            }
-            
-            .close-btn {
-                top: 15px;
-                right: 15px;
-            }
-        }
 
-        @media screen and (max-width: 670px) {
-            .slider-container{
-                width: 60%;
-            }
-            .header {
-                width: 100%;
-            }
-            .header-right {
-                display: none;
-            }
-        }
+@media screen and (min-width: 1024px) {
+    /* Изменение 1: Показываем десктопное меню, скрываем бургер */
+    .burger-menu {
+        display: none;
+    }
+    
+    .header-right {
+        display: flex !important;
+    }
+    
+    /* Изменение 2: Карточки игр в 4-5 колонок */
+    .games-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    
+    .game-card {
+        width: 100%;
+    }
+    
+    /* Изменение 3: Преимущества в 4 колонки в ряд */
+    .advantages-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .advantage-item {
+        flex: 1;
+        min-width: 200px;
+        max-width: 250px;
+    }
+    
+    /* Изменение 4: Партнеры в 3 колонки с hover-эффектами */
+    .partners-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 80px;
+    }
+    
+    .partner-logo {
+        transition: all 0.3s;
+    }
+    
+    .partner-logo:hover {
+        transform: scale(1.15);
+        filter: brightness(1) grayscale(0%);
+    }
+    
+    /* Изменение 5: Подвал в 3 колонки */
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    .footer-section {
+        text-align: left;
+    }
+    
+    .contact-info {
+        justify-content: flex-start;
+    }
+    
+    /* Дополнительные адаптации */
+    .slider-container {
+        width: 800px;
+    }
+    
+    .search-container {
+        width: 800px;
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
+    /* Изменение: Увеличение контента и отступов */
+    .games-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 40px;
+    }
+    
+    .game-card {
+        transition: all 0.4s;
+    }
+    
+    .game-card:hover {
+        transform: translateY(-15px) scale(1.02);
+    }
+    
+    .advantages-container {
+        max-width: 1200px;
+        gap: 40px;
+    }
+    
+    .advantage-item {
+        padding: 40px 30px;
+    }
+    
+    .section-title {
+        font-size: 42px;
+    }
+    
+    .advantages-title {
+        font-size: 42px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-card, .advantage-item, .partner-logo {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Плавное появление страницы */
+body {
+    animation: fadeIn 0.3s ease-out;
+}
