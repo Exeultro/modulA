@@ -762,7 +762,6 @@ body {
         width: 100%;
     }
     
-    /* Изменение 3: Преимущества в 4 колонки в ряд */
     .advantages-container {
         display: flex;
         flex-direction: row;
@@ -776,7 +775,6 @@ body {
         max-width: 250px;
     }
     
-    /* Изменение 4: Партнеры в 3 колонки с hover-эффектами */
     .partners-container {
         display: flex;
         flex-direction: row;
@@ -793,7 +791,6 @@ body {
         filter: brightness(1) grayscale(0%);
     }
     
-    /* Изменение 5: Подвал в 3 колонки */
     .footer-content {
         display: flex;
         flex-direction: row;
@@ -809,7 +806,6 @@ body {
         justify-content: flex-start;
     }
     
-    /* Дополнительные адаптации */
     .slider-container {
         width: 800px;
     }
