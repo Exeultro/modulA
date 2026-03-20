@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="style/stylesprof.css">
+</head>
+<body>
+    <main class="main-full">
+        <!-- Информация о пользователе -->
+        <section class="profile-section">
+            <div class="section-header">
+                <h1 class="page-title">Личный кабинет</h1>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                    <h2>Шекмар Кирилл</h2>
+                </div>
+                
+                <div class="profile-details">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">kirill.shekmar@gmail.com</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Фамилия</span>
+                            <span class="info-value">Шекмар</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Имя</span>
+                            <span class="info-value">Кирилл</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Дата рождения</span>
+                            <span class="info-value">05.01.2008</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Номер телефона</span>
+                            <span class="info-value">+7 (228) 125-63-11</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- История покупок -->
+        <section class="history-section">
+            <h2 class="section-title">История покупок</h2>
+            
+            <div class="history-table-wrapper">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Дата покупки</th>
+                            <th>Название игры/предмета</th>
+                            <th>Стоимость</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15.03.2026</td>
+                            <td>Cyberpunk 2077</td>
+                            <td>1 999 ₽</td>
+                            <td><span class="status completed">Выполнено</span></td>
+                        </tr>
+                        <tr>
+                            <td>10.03.2026</td>
+                            <td>The Witcher 3: Wild Hunt</td>
+                            <td>1 499 ₽</td>
+                            <td><span class="status completed">Выполнено</span></td>
+                        </tr>
+                        <tr>
+                            <td>05.03.2026</td>
+                            <td>Red Dead Redemption 2</td>
+                            <td>2 499 ₽</td>
+                            <td><span class="status completed">Выполнено</span></td>
+                        </tr>
+                        <tr>
+                            <td>28.02.2026</td>
+                            <td>Baldur's Gate 3</td>
+                            <td>2 799 ₽</td>
+                            <td><span class="status completed">Выполнено</span></td>
+                        </tr>
+                        <tr>
+                            <td>20.02.2026</td>
+                            <td>Hogwarts Legacy</td>
+                            <td>3 299 ₽</td>
+                            <td><span class="status processing">В обработке</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Настройки профиля -->
+        <section class="settings-section">
+            <h2 class="section-title">Настройки профиля</h2>
+            
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <h3>Безопасность</h3>
+                    <a href="#change-password" class="btn-settings"> Сменить пароль </a>
+                </div>
+
+                <div class="settings-card">
+                    <h3> Оформление</h3>
+                    <div class="theme-options">
+                        <div class="theme-option active">
+                            <span>Тёмная</span>
+                        </div>
+                        <div class="theme-option">
+                            <span>Светлая</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

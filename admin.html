@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель</title>
+    <link rel="stylesheet" href="style/stylesadmin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Боковое меню админки -->
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <a href="#" class="admin-nav-item active"> <span>Добавить игру</span></a>
+                <a href="#" class="admin-nav-item"> <span>Редактировать игры</span></a>
+                <a href="#" class="admin-nav-item"> <span>Пользователи</span> </a>
+                <a href="#" class="admin-nav-item"> <span>Статистика</span></a>
+                <a href="#" class="admin-nav-item"> <span>Настройки</span> </a>
+            </nav>
+            
+            <div class="admin-user">
+                <i class="fas fa-user-circle"></i>
+                <div>
+                    <p>Администратор</p>
+                    <a href="index.html">Выход</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Основной контент админки -->
+        <main class="admin-main">
+            <div class="admin-header">
+                <h1 class="admin-title">Добавление новой игры</h1>
+                <p class="admin-subtitle">Заполните все поля для добавления игры в каталог</p>
+            </div>
+
+            <!-- Форма добавления игры -->
+            <div class="admin-form-container">
+                <form class="admin-form">
+                    <!-- Название игры -->
+                    <div class="form-group">
+                        <label for="game-title">
+                            Название игры <span class="required">*</span>
+                        </label>
+                        <input type="text" id="game-title" class="form-input" placeholder="Введите название игры" required>
+                    </div>
+
+                    <!-- Жанр -->
+                    <div class="form-group">
+                        <label for="game-genre">
+                            Жанр <span class="required">*</span>
+                        </label>
+                        <select id="game-genre" class="form-select" required>
+                            <option value="" disabled selected>Выберите жанр</option>
+                            <option value="rpg">RPG</option>
+                            <option value="action">Action</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="shooter">Шутер</option>
+                            <option value="strategy">Стратегия</option>
+                            <option value="racing">Гонки</option>
+                            <option value="sport">Спорт</option>
+                            <option value="simulator">Симулятор</option>
+                        </select>
+                    </div>
+
+                    <!-- Изображение -->
+                    <div class="form-group">
+                        <label for="game-image">
+                            Изображение <span class="required">*</span>
+                        </label>
+                        <div class="file-upload">
+                            <input type="file" id="game-image" class="file-input" accept="image/*" required>
+                            <label for="game-image" class="file-label">
+                                <span>Выберите файл или перетащите сюда</span>
+                            </label>
+                            <div class="file-info">Поддерживаются: JPG, PNG, GIF (макс. 5 МБ)</div>
+                        </div>
+                    </div>
+
+                    <!-- Компания-разработчик -->
+                    <div class="form-group">
+                        <label for="game-developer">
+                            Компания-разработчик <span class="required">*</span>
+                        </label>
+                        <input type="text" id="game-developer" class="form-input" placeholder="Введите название компании" required>
+                    </div>
+
+                    <!-- Описание -->
+                    <div class="form-group">
+                        <label for="game-description">
+                            Описание <span class="required">*</span>
+                        </label>
+                        <textarea id="game-description" class="form-textarea" placeholder="Введите описание игры" rows="6" required></textarea>
+                        <div class="textarea-counter">0/1000 символов</div>
+                    </div>
+
+                    <!-- Стоимость -->
+                    <div class="form-group">
+                        <label for="game-price">
+                            Стоимость <span class="required">*</span>
+                        </label>
+                        <div class="price-input-wrapper">
+                            <input type="number" id="game-price" class="form-input price-input" placeholder="0" min="0" step="0.01" required>
+                            <span class="price-currency">₽</span>
+                        </div>
+                    </div>
+
+                    <!-- Кнопка добавления -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-add">
+                            Добавить игру
+                        </button>
+                        <button type="reset" class="btn btn-cancel">
+                            <i class="fas fa-times"></i>
+                            Очистить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

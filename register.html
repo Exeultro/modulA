@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация </title>
+    <link rel="stylesheet" href="style/stylesreg.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="register-section">
+                <h1>Регистрация</h1>
+                <form>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input id="email" type="email" placeholder="your@email.com" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field half">
+                            <label for="lastname">Фамилия <span class="required">*</span></label>
+                            <input id="lastname" type="text" placeholder="Яша" required />
+                        </div>
+                        <div class="form-field half">
+                            <label for="firstname">Имя <span class="required">*</span></label>
+                            <input id="firstname" type="text" placeholder="Лава" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field ">
+                            <label for="birthdate">Дата рождения <span class="required">*</span></label>
+                            <input id="birthdate" type="date" required />
+                        </div>
+                        <div class="form-field ">
+                            <label for="phone">Номер телефона <span class="required">*</span></label>
+                            <input id="phone" type="tel" placeholder="+7 (999) 228-86-22" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field half">
+                            <label for="password">Пароль <span class="required">*</span></label>
+                            <input id="password" type="password" placeholder="*******" required />
+                        </div>
+                        <div class="form-field half">
+                            <label for="confirm-password">Повтор пароля <span class="required">*</span></label>
+                            <input id="confirm-password" type="password" placeholder="*******"  required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field checkbox-field">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreement" required />
+                                <span class="checkbox-text">Я согласен на обработку персональных данных <span class="required">*</span></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="submit" class="btn btn-register" value="Зарегистрироваться" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

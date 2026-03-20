@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Games - Магазин игр</title>
+    <link rel="stylesheet" href="style/styleslight.css"> 
+</head>
+<body>
+    <header>
+        <header>
+            <div class="header">
+                <a href="index.html" class="logo">
+                    <img src="foto/logo.png" width="120px" height="60px" alt="Best Games">
+                </a>
+                
+                <!-- Бургер-меню для мобильных -->
+                <div class="burger-menu">
+                    <input type="checkbox" id="burger-toggle" class="burger-toggle">
+                    <label for="burger-toggle" class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    
+                    <!-- Выпадающее меню -->
+                    <div class="dropdown-nav">
+                        <a class="active" href="index_light.html">Главная</a>
+                        <a href="profile.html">Личный кабинет</a>
+                        <a href="register.html">Регистрация</a>
+                        <a href="login.html">Вход</a>
+                        <a href="catalog.html">Каталог игр</a>
+                    </div>
+                </div>
+
+                <!-- Десктопная навигация -->
+                <div class="header-right">
+                    <a class="active" href="index_light.html">Главная</a>
+                    <a href="profile.html">Личный кабинет</a>
+                    <a href="register.html">Регистрация</a>
+                    <a href="login.html">Вход</a>
+                    <a href="catalog.html">Каталог игр</a>
+                </div>
+            </div>
+        </header>
+
+    <!-- Остальной контент без изменений -->
+    <!-- Быстрый поиск по жанрам -->
+    <div class="search-section" id="search">
+        <div class="search-container">
+            <h3>Быстрый поиск игр по жанру</h3>
+            <div class="search-box">
+                <input type="text" id="genreSearch" placeholder="Введите жанр (например: RPG, Шутер, Гонки)" autocomplete="off">
+                <button id="searchBtn">Найти</button>
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+    </div>
+
+    <!-- Слайдер -->
+    <section class="slid">
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <div class="slide">
+                    <img src="foto/Cyberpunk.png">
+                    <h3>Cyberpunk 2077</h3>
+                    <div class="price">1999 ₽</div>
+                    <a href="#" class="btn">Подробнее</a>
+                </div>
+
+                <div class="slide">
+                    <img alt="The Witcher 3">
+                    <h3>The Witcher 3</h3>
+                    <div class="price">1499 ₽</div>
+                    <a href="#" class="btn">Подробнее</a>
+                </div>
+
+                <div class="slide">
+                    <img alt="Red Dead Redemption 2">
+                    <h3>Red Dead Redemption 2</h3>
+                    <div class="price">2499 ₽</div>
+                    <a href="#" class="btn">Подробнее</a>
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button id="prevBtn"><</button>
+                <button id="nextBtn">></button>
+            </div>
+
+            <div class="indicators" id="indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+                <div class="indicator" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные игры -->
+    <section class="games-section">
+        <h2 class="section-title">Популярные игры</h2>
+        <div class="games-container">
+            <!-- Карточка 1 -->
+            <div class="game-card">
+                <img src="foto/Cyberpunk.png" width="250px" height="200px">
+                <div class="game-info">
+                    <div class="game-title">Cyberpunk 2077</div>
+                    <div class="game-genre">Жанр: RPG, Action</div>
+                    <div class="game-developer">Разработчик: CD Projekt Red</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star star-empty">★</span>
+                    </div>
+                    <div class="game-price">1999 ₽</div>
+                    <a href="#catalog" class="game-button">Купить</a>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="game-card">
+                <img src="foto/witcher.jpg"  width="250px" height="200px">
+                <div class="game-info">
+                    <div class="game-title">The Witcher 3</div>
+                    <div class="game-genre">Жанр: RPG, Open World</div>
+                    <div class="game-developer">Разработчик: CD Projekt Red</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="game-price">1499 ₽</div>
+                    <a href="#catalog" class="game-button">Купить</a>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="game-card">
+                <img src="foto/rdr.jpg" width="250px" height="200px">
+                <div class="game-info">
+                    <div class="game-title">Red Dead Redemption 2</div>
+                    <div class="game-genre">Жанр: Action, Adventure</div>
+                    <div class="game-developer">Разработчик: Rockstar Games</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="game-price">2499 ₽</div>
+                    <a href="#catalog" class="game-button">Купить</a>
+                </div>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="game-card">
+                <img src="foto/baldur.png" width="250px" height="200px">
+                <div class="game-info">
+                    <div class="game-title">Baldur's Gate 3</div>
+                    <div class="game-genre">Жанр: RPG, Strategy</div>
+                    <div class="game-developer">Разработчик: Larian Studios</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="game-price">2799 ₽</div>
+                    <a href="#catalog" class="game-button">Купить</a>
+                </div>
+            </div>
+
+            <!-- Карточка 5 -->
+            <div class="game-card">
+                <img src="foto/hogwarts.jpg" width="250px" height="200px">
+                <div class="game-info">
+                    <div class="game-title">Hogwarts Legacy</div>
+                    <div class="game-genre">Жанр: RPG, Adventure</div>
+                    <div class="game-developer">Разработчик: Avalanche Software</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star star-empty">★</span>
+                    </div>
+                    <div class="game-price">3299 ₽</div>
+                    <a href="#catalog" class="game-button">Купить</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наши партнеры -->
+    <section class="partners-section">
+        <h2 class="section-title">Наши партнеры</h2>
+        <div class="partners-container">
+            <div class="partner-logo">
+                <img src="foto/razer.jpg" width="150" height="80">            
+            </div>
+            <div class="partner-logo">
+                <img src="foto/intel.jpg" width="150" height="80">            
+            </div>
+            <div class="partner-logo">
+                <img src="foto/nvidia.jpg" width="150" height="80">
+            </div>
+        </div>
+    </section>
+
+    <!-- Инфографика-->
+    <div class="advantages-section">
+        <h2 class="advantages-title">Наши преимущества</h2>
+        <div class="advantages-container">
+            <div class="advantage-item">
+                <div class="advantage-icon">💰</div>
+                <h3>Привлекательные цены</h3>
+                <p>Лучшие цены на игры и постоянные скидки до 90%</p>
+            </div>
+
+            <div class="advantage-item">
+                <div class="advantage-icon">🎮</div>
+                <h3>Ежемесячные акции</h3>
+                <p>Каждый месяц новые предложения и эксклюзивные скидки</p>
+            </div>
+
+            <div class="advantage-item">
+                <div class="advantage-icon">💬</div>
+                <h3>Круглосуточная поддержка</h3>
+                <p>24/7 помощь по любым вопросам</p>
+            </div>
+
+            <div class="advantage-item">
+                <div class="advantage-icon">⚡</div>
+                <h3>Быстрая покупка</h3>
+                <p>Мгновенное получение ключа после оплаты</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <p>8-800-999-55-99</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <p>best@games.ru</p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Информация</h3>
+                <a href="#clients">Клиентам</a>
+                <a href="#partners">Партнерам</a>
+                <a href="#about">О нас</a>
+                <a href="#contacts">Контакты</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Навигация</h3>
+                <a href="index.html">Главная</a>
+                <a href="register.html">Регистрация</a>
+                <a href="login.html">Авторизация</a>
+                <a href="profile.html">Личный кабинет</a>
+                <a href="#search">Поиск</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-main {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 30px;
+    flex: 1;
+    width: 100%;
+}
+
+.catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.catalog-title {
+    font-size: 36px;
+    color: #e0e0e0;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.catalog-title:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #764ba2, #b87cff);
+    border-radius: 2px;
+}
+
+.filter-toggle {
+    display: none;
+    position: relative;
+}
+
+.filter-toggle-checkbox {
+    display: none;
+}
+
+.filter-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #764ba2;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.filter-toggle-label:hover {
+    background: #5d3a82;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+}
+
+.catalog-container {
+    display: flex;
+    gap: 30px;
+}
+
+.filter-sidebar {
+    width: 280px;
+    background: #2d2d2d;
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid #404040;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.filter-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #404040;
+}
+
+.filter-genres {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.genre-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+
+.genre-checkbox:hover {
+    color: #b87cff;
+}
+
+.genre-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #764ba2;
+}
+
+.filter-apply {
+    width: 100%;
+    padding: 12px;
+    background: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-apply:hover {
+    background: #5d3a82;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+}
+
+.games-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background: #2d2d2d;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #404040;
+    transition: all 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(118, 75, 162, 0.3);
+    border-color: #764ba2;
+}
+
+.game-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.05);
+}
+
+.game-info {
+    padding: 20px;
+}
+
+.game-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.game-genre {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.game-developer {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.game-rating {
+    margin-bottom: 10px;
+}
+
+.game-rating i {
+    color: #ffc107;
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.game-rating .far {
+    color: #404040;
+}
+
+.game-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.game-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #764ba2;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.game-button:hover {
+    background: #5d3a82;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+}
+
+/* Мобильная панель фильтров - ИСПРАВЛЕНО */
+.mobile-filter {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Показываем фильтр когда чекбокс отмечен */
+#filter-toggle:checked ~ .mobile-filter {
+    display: flex !important;
+}
+
+.mobile-filter-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    background: #2d2d2d;
+    border-radius: 25px;
+    padding: 30px;
+    border: 1px solid #404040;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.mobile-filter-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.mobile-filter-close:hover {
+    color: #ff6b6b;
+}
+
+@media screen and (max-width: 1024px) {
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .filter-sidebar {
+        display: none;
+    }
+    
+    .filter-toggle {
+        display: block;
+    }
+    
+    .catalog-container {
+        flex-direction: column;
+    }
+    
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (min-width: 969px) {
+    .mobile-filter {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .catalog-main {
+        padding: 0 20px;
+    }
+    
+    .catalog-title {
+        font-size: 28px;
+    }
+    
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalog-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-toggle-label {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .mobile-filter-content {
+        padding: 20px;
+    }
+}

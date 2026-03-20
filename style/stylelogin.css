@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1a1a;
+    background: -webkit-linear-gradient(to right, #2d2d2d, #1a1a1a);
+    background: linear-gradient(to right, #2d2d2d, #1a1a1a);
+    font-family: "Raleway", sans-serif;
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+a {
+    color: #b87cff;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #9f5ff2;
+    text-decoration: underline;
+}
+
+label {
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    width: auto;
+    background: #2d2d2d;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #404040;
+}
+
+.sign-in-section {
+    padding: 30px;
+    min-width: 350px;
+}
+
+.sign-in-section h6 {
+    margin-top: 0px;
+    font-size: 0.75em;
+    color: #888;
+}
+
+.sign-in-section h1 {
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.sign-in-section h1:after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    bottom: -15px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 40px;
+    background: #b87cff;
+    background: -webkit-linear-gradient(to right, #d4a5ff, #9f5ff2);
+    background: linear-gradient(to right, #d4a5ff, #9f5ff2);
+    border-radius: 2px;
+    transition: 0.25s;
+}
+
+.sign-in-section h1:hover:after {
+    width: 100px;
+}
+
+.sign-in-section p {
+    text-align: center;
+    font-size: 0.85em;
+    margin-top: 20px;
+    color: #888;
+}
+
+.sign-in-section p a {
+    color: #b87cff;
+    font-weight: 700;
+}
+
+.form-field {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+.form-field input[type="email"],
+.form-field input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #404040;
+    background-color: #333;
+    color: #e0e0e0;
+    font-size: 14px;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.form-field input[type="email"]:focus,
+.form-field input[type="password"]:focus {
+    border: 2px solid #b87cff;
+    background-color: #3a3a3a;
+    box-shadow: 0 0 10px rgba(184, 124, 255, 0.2);
+}
+
+.form-field input::placeholder {
+    color: #666;
+    font-size: 14px;
+}
+
+.form-options {
+    display: block;
+    margin: 10px auto;
+    width: 300px;
+    text-align: right;
+}
+
+.form-options a {
+    color: #b87cff;
+    font-size: 0.85em;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.form-options a:hover {
+    color: #d4a5ff;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 1em;
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    margin: 10px 0px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+}
+
+.btn-signin {
+    background: #b87cff;
+    background: -webkit-linear-gradient(to right, #d4a5ff, #9f5ff2);
+    background: linear-gradient(to right, #d4a5ff, #9f5ff2);
+    box-shadow: 0px 5px 15px rgba(159, 95, 242, 0.3);
+    color: #fff;
+    border: none;
+}
+
+.btn-signin:hover {
+    background: linear-gradient(to right, #c69cff, #b87cff);
+    box-shadow: 0px 8px 20px rgba(159, 95, 242, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-signin:active {
+    transform: translateY(0);
+    box-shadow: 0px 3px 10px rgba(159, 95, 242, 0.3);
+}
+
+@media screen and (max-width: 480px) {
+    .sign-in-section {
+        padding: 20px;
+        min-width: auto;
+    }
+    
+    .form-field {
+        width: 250px;
+    }
+    
+    .form-options {
+        width: 250px;
+    }
+    
+    .form {
+        padding: 15px;
+    }
+}

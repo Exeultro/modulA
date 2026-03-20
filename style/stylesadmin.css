@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+/* Контейнер админки */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Боковое меню */
+.admin-sidebar {
+    width: 280px;
+    background: #0a0a0a;
+    border-right: 2px solid #764ba2;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+.admin-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 15px;
+}
+
+.admin-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    color: #e0e0e0;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+
+.admin-nav-item:hover {
+    background: #2d2d2d;
+}
+
+.admin-nav-item.active {
+    background: #764ba2;
+    color: white;
+}
+
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-top: 1px solid #404040;
+    margin-top: 20px;
+}
+
+.admin-user p {
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.admin-user a {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.admin-user a:hover {
+    color: #ff6b6b;
+}
+
+.admin-main {
+    flex: 1;
+    margin-left: 280px;
+    padding: 40px;
+}
+
+.admin-header {
+    margin-bottom: 40px;
+}
+
+.admin-title {
+    font-size: 36px;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.admin-title:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #764ba2, #b87cff);
+    border-radius: 2px;
+}
+
+.admin-subtitle {
+    color: #888;
+    font-size: 16px;
+}
+
+.admin-form-container {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    background: #2d2d2d;
+    border-radius: 25px;
+    padding: 30px;
+    border: 1px solid #404040;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.form-group label i {
+    color: #764ba2;
+    width: 20px;
+}
+
+.required {
+    color: #ff6b6b;
+    margin-left: 4px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: #1a1a1a;
+    border: 2px solid #404040;
+    border-radius: 12px;
+    color: #e0e0e0;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #764ba2;
+    background: #2d2d2d;
+    outline: none;
+    box-shadow: 0 0 15px rgba(118, 75, 162, 0.2);
+}
+
+.form-select {
+    cursor: pointer;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.textarea-counter {
+    text-align: right;
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+}
+
+.file-upload {
+    position: relative;
+}
+
+.file-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 30px;
+    background: #1a1a1a;
+    border: 2px dashed #404040;
+    border-radius: 12px;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.file-label i {
+    font-size: 40px;
+    color: #764ba2;
+}
+
+.file-input:hover + .file-label {
+    border-color: #764ba2;
+    background: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.file-info {
+    font-size: 12px;
+    color: #888;
+    margin-top: 8px;
+}
+
+.price-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.price-input {
+    padding-right: 50px;
+}
+
+.price-currency {
+    position: absolute;
+    right: 16px;
+    color: #888;
+    font-weight: 600;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+.btn-add {
+    background: #764ba2;
+    color: white;
+}
+
+.btn-add:hover {
+    background: #5d3a82;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);
+}
+
+.btn-cancel {
+    background: #404040;
+    color: #e0e0e0;
+}
+
+.btn-cancel:hover {
+    background: #4f4f4f;
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 1200px) {
+    .admin-form-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-preview {
+        position: static;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .admin-sidebar {
+        width: 80px;
+        overflow: visible;
+    }
+    
+    .admin-logo img {
+        width: 40px;
+    }
+    
+    .admin-nav-item span,
+    .admin-user div,
+    .admin-logo span {
+        display: none;
+    }
+    
+    .admin-main {
+        margin-left: 80px;
+    }
+    
+    .admin-nav-item {
+        justify-content: center;
+        padding: 15px 0;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .admin-main {
+        padding: 20px;
+    }
+    
+    .admin-title {
+        font-size: 28px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .admin-sidebar {
+        display: none;
+    }
+    
+    .admin-main {
+        margin-left: 0;
+    }
+    
+    .admin-form-container {
+        padding: 20px;
+    }
+}
